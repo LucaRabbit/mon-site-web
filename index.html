@@ -25,7 +25,7 @@
                 <li><a href="#experiences">Experiences</a></li>
                 <li><a href="#competences">Compétences</a></li>
                 <li><a href="#album">Album Photo</a></li>
-                <li><a href="#calendrier">Calendrier</a></li>
+                <li><a href="#event">Evenements</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
     </nav>
@@ -113,7 +113,7 @@
             <p><strong>Lieu :</strong> LYON </p>
             <p><strong>Missions :</strong></p>
             <ul>
-                <li>Définition de la modélisation des données(Modèles logique(MLD) et conceptuel(MCD) </li>
+                <li>Définition de la modélisation des données, Modèles logique(MLD) et conceptuel(MCD) </li>
                 <li>Réalisation d'une base de données(MySQL)</li>
                 <li>Collection des données via un formulaire HTML et traitement en PHP</li>
                 <li>Stockage, interrogation et affichage des données via une interface web(HTML et CSS)</li>
@@ -233,6 +233,10 @@
         </div>
     </div>
 
+    <div id="events" class="section fade-in">
+
+    </div>
+
     <!-- Affichage de l'album photo-->
     <div id="album" class="album section fade-in">
         <h2>Mon Album Photo</h2>
@@ -244,83 +248,6 @@
             <img src="images/placeholder.png" alt="Photo 5">
             <img src="images/placeholder.png" alt="Photo 6">
         </div>
-    </div>
-
-    <!-- Affichage calendrier -->
-    <div id="calendrier" class="calendrier section fade-in">
-        <h2>Calendrier – Novembre 2025</h2>
-
-        <table class="table-calendrier fade-in">
-            <thead>
-            <tr>
-                <th>Dim</th>
-                <th>Lun</th>
-                <th>Mar</th>
-                <th>Mer</th>
-                <th>Jeu</th>
-                <th>Ven</th>
-                <th>Sam</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td></td> <!-- Dim -->
-                <td></td> <!-- Lun -->
-                <td></td> <!-- Mar -->
-                <td></td> <!-- Mer -->
-                <td></td> <!-- Jeu -->
-                <td></td> <!-- Ven -->
-                <td>1</td> <!-- Sam -->
-            </tr>
-            <tr>
-                <td>2</td>
-                <td class="event" data-info="Projet Pointage">3<br>Livraison Projet Pointage</td>
-                <td class="event" data-info="Projet Site Web Statique">4<br>Livraison Projet Site Web Statique</td>
-                <td class="event" data-info="Club Robotique au FabLab (https://lyon.cesi.fr/campus/environnement-technologique-fablab/) | Stage Dating (https://lyon.cesi.fr/agenda/entreprises-recrutez-votre-futur-talent-lors-de-notre-stage-dating/)">5<br>Club Robotique au FabLab<br>Stage Dating</td>
-                <td class="event" data-info="Projet Site Web Dynamique">6<br>Livraison Projet Site Web Dynamique</td>
-                <td>7</td>
-                <td>8</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>10</td>
-                <td>11</td>
-                <td>12</td>
-                <td>13</td>
-                <td>14</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>17</td>
-                <td>18</td>
-                <td>19</td>
-                <td>20</td>
-                <td>21</td>
-                <td>22</td>
-            </tr>
-            <tr>
-                <td>23</td>
-                <td>24</td>
-                <td>25</td>
-                <td>26</td>
-                <td>27</td>
-                <td>28</td>
-                <td>29</td>
-            </tr>
-            <tr>
-                <td>30</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-
-        <div id="event-details" class="event-details"></div>
     </div>
 
     <div id="contact" class="contact section fade-in">
