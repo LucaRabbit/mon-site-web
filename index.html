@@ -24,8 +24,7 @@
                 <li><a href="#formations">Formations</a></li>
                 <li><a href="#experiences">Experiences</a></li>
                 <li><a href="#competences">Compétences</a></li>
-                <li><a href="#album">Album Photo</a></li>
-                <li><a href="#event">Evenements</a></li>
+                <li><a href="#events">Evenements</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
     </nav>
@@ -91,7 +90,7 @@
     <div id="experiences" class="experiences section fade-in">
         <h2>Mes Expériences Professionnelles</h2>
 
-        <div class="experience fade-in">
+        <div class="experience">
             <h3>Projet Métier - Système de Pointage</h3>
             <p><strong>Cadre :</strong> Formation CESI</p>
             <p><strong>Lieu :</strong> LYON </p>
@@ -202,7 +201,7 @@
     <div id="competences" class="competences section fade-in">
         <h2>Mes Compétences</h2>
 
-        <div class="competence-group fade-in">
+        <div class="competence-group">
             <h3>Développement Web</h3>
             <ul>
                 <li>HTML, CSS, JavaScript</li>
@@ -210,7 +209,7 @@
             </ul>
         </div>
 
-        <div class="competence-group fade-in">
+        <div class="competence-group">
             <h3>Outils & Technologies</h3>
             <ul>
                 <li>Git & GitHub</li>
@@ -221,7 +220,7 @@
             </ul>
         </div>
 
-        <div class="competence-group fade-in">
+        <div class="competence-group">
             <h3>Soft Skills</h3>
             <ul>
                 <Li>Autonomie</Li>
@@ -233,20 +232,37 @@
         </div>
     </div>
 
-    <div id="events" class="section fade-in">
-
+    <!-- Affichage de l'album photo-->
+    <div id="events" class="events section fade-in">
+        <h2>Evenements</h2>
+        <div class="events-grid">
+            <img src="images/placeholder.png" alt="Photo 1" onClick="openPopup('eventdetail1')">
+            <img src="images/placeholder.png" alt="Photo 2" onClick="openPopup('eventdetail2')">
+            <img src="images/placeholder.png" alt="Photo 3" onClick="openPopup('eventdetail3')">
+        </div>
     </div>
 
-    <!-- Affichage de l'album photo-->
-    <div id="album" class="album section fade-in">
-        <h2>Mon Album Photo</h2>
-        <div class="album-grid fade-in">
-            <img src="images/placeholder.png" alt="Photo 1">
-            <img src="images/placeholder.png" alt="Photo 2">
-            <img src="images/placeholder.png" alt="Photo 3">
-            <img src="images/placeholder.png" alt="Photo 4">
-            <img src="images/placeholder.png" alt="Photo 5">
-            <img src="images/placeholder.png" alt="Photo 6">
+    <div id="popup" class="popup">
+        <div class="popup-contenu">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <div id="popup-body"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div id="eventdetail1" class="hidden">
+            <h3>Contenu pour l’image 1</h3>
+            <p>Texte, vidéo ou autre élément lié à l’image 1.</p>
+        </div>
+
+        <div id="eventdetail2" class="hidden">
+            <h3>Contenu pour l’image 2</h3>
+            <p>Texte, vidéo ou autre élément lié à l’image 2.</p>
+        </div>
+
+        <div id="eventdetail3" class="hidden">
+            <h3>Contenu pour l’image 3</h3>
+            <p>Texte, vidéo ou autre élément lié à l’image 3.</p>
         </div>
     </div>
 
@@ -258,7 +274,7 @@
 
         <!-- Formulaire de contact par mail -->
         <p>Par Email : </p>
-        <form action="mailto:luca.ramampy@viacesi.com" method="post" enctype="text/plain" class="contact-form fade-in">
+        <form action="mailto:luca.ramampy@viacesi.com" method="post" enctype="text/plain" class="contact-form">
             <!-- Champ Nom -->
             <div class="form">
                 <label for="nom">Nom :</label>

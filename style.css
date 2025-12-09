@@ -4,7 +4,7 @@
     --font-size: 17px;
     --color-primary: #2c3e50;
     --color-secondary: #3498db;
-    --color-accent: #e74c3c;
+    --color-accent: #ffffff;
     --color-light: #ecf0f1;
     --color-dark: #34495e;
     --color-gray: #7f8c8d;
@@ -40,8 +40,7 @@ body {
     "experiences"
     "competences"
     "iframe"
-    "album"
-    "calendrier"
+    "events"
     "contact"
     "footer";
     gap: 10px;
@@ -54,11 +53,11 @@ body {
 /* ==== EFFETS === */
 .fade-in {
     opacity: 0; /* invisible */
-    transform: translateY(30px); /* décalage vers le bas */
+    transform: translateY(20px); /* décalage vers le bas */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.fade-in.visible {
+.fade-in.in-view {
     opacity: 1; /* visible */
     transform: translateY(0);
 }
@@ -82,7 +81,7 @@ body {
 .menu {
     grid-area: menu;
     position: sticky;
-    top: 10px;
+    top: 0px;
     z-index: 1000; /* Pour rester au-dessus des autres éléments */
     padding: 10px 10px;
     background-color: var(--color-dark);
@@ -92,15 +91,6 @@ body {
 
 .menu-toggle {
     display: none;
-}
-
-.menu.scrolled {
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.menu.scrolled:hover {
-    opacity: 1;
 }
 
 .menu ul {
@@ -135,18 +125,13 @@ body {
 }
 
 .menu a.active {
+    color: black;
     background-color: var(--color-accent);
 }
 
 /* === SECTIONS === */
 .section {
     transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* === CONTENU === */
-.contenu {
-    grid-area: contenu;
-    min-height: 300px;
 }
 
 /* === FOOTER === */
@@ -271,107 +256,73 @@ tbody tr:nth-child(even) {
 }
 
 .iframe-section iframe {
-    width: 100%;
+    width: 560px;
     height: 315px;
     border: none;
     border-radius: 5px;
 }
 
-/* === ALBUM PHOTO === */
-.album {
-    grid-area: album;
+/* === EVENEMENTS === */
+.events {
+    grid-area: events;
 }
 
-.album-grid {
+.events-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
 }
 
-.album-grid img {
+.events-grid img {
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: cover;
+    cursor: pointer;
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.album-grid img:hover {
+.events-grid img:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow);
 }
 
-/* === CALENDRIER === */
-.calendrier {
-    grid-area: calendrier;
+/* === POP UP === */
+.popup {
+display: none; /* hidden par défaut */
+position: fixed;
+z-index: 1000;
+left: 0; top: 0;
+width: 100%; height: 100%;
+background-color: rgba(0,0,0,0.6);
+justify-content: center;
+align-items: center;
+}
+.popup-contenu {
+background: #fff;
+padding: 20px;
+border-radius: 8px;
+max-width: 600px;
+width: 90%;
+position: relative;
+animation: fadeIn 0.4s ease;
+}
+.popup-contenu h3 {
+margin-top: 0;
+}
+.close {
+position: absolute;
+top: 10px; right: 15px;
+font-size: 24px;
+font-weight: bold;
+color: #333;
+cursor: pointer;
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(-20px); }
+to { opacity: 1; transform: translateY(0); }
 }
 
-.table-calendrier {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.table-calendrier th,
-.table-calendrier td {
-    border: 1px solid var(--color-border);
-    padding: 10px;
-    text-align: center;
-    vertical-align: top;
-    min-height: 80px;
-}
-
-.table-calendrier thead {
-    background-color: var(--color-dark);
-    color: white;
-}
-
-.event {
-    background-color: #ffeaa7;
-    font-weight: bold;
-}
-
-.event-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.3s ease;
-}
-
-.event-details a {
-    background-color: var(--color-secondary);
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-    padding: 10px;
-    border: none;
-    text-decoration: none;
-    border-radius: var(--radius);
-    font-size: 1em;
-    box-shadow: var(--shadow);
-}
-
-
-.event-details a:hover {
-    color: var(--color-accent);
-}
-
-.event-details.visible {
-    display: block;
-    max-height: 200px;
-    padding: 15px;
-}
-
-.event-details ul {
-    margin-top: 10px;
-    padding-left: 20px;
-    list-style-type: disc;
-}
-
-.event-details ul li {
-    margin-bottom: 30px;
-}
 
 /* === CONTACT === */
 .contact {
@@ -468,8 +419,7 @@ textarea {
       "experiences experiences"
       "competences competences"
       "iframe iframe"
-      "album album"
-      "calendrier calendrier"
+      "events events"
       "contact contact"
       "footer footer";
     }
