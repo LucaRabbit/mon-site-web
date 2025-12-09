@@ -238,6 +238,15 @@ tbody tr:nth-child(even) {
 /* === COMPETENCES === */
 .competences {
     grid-area: competences;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.competence-group {
+    flex: 1;
+    min-width: 200px;
 }
 
 .competence-group h3 {
@@ -346,6 +355,7 @@ to { opacity: 1; transform: translateY(0); }
 }
 
 .contact a:hover {
+    color: black;
     background-color: var(--color-accent);
 }
 
@@ -402,6 +412,7 @@ textarea {
 
 .contact-form input[type="submit"]:hover,
 .contact-form input[type="reset"]:hover {
+    color: black;
     background-color: var(--color-accent);
 }
 
@@ -475,12 +486,17 @@ textarea {
     .menu ul.show {
         display: flex;
     }
+
+    .competences {
+        grid-area: competences;
+        display: flex;
+        gap: 20px;
+    }
 }
 
 @media (min-width: 1024px) {
     .grid-container {
         grid-template-columns: 1fr 4fr;
     }
-
 }
 
