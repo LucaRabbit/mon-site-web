@@ -265,13 +265,13 @@ tbody tr:nth-child(even) {
     padding-left: 20px;
 }
 
-/* Iframe Section */
+/* iframe section */
 .iframe-section {
     grid-area: iframe;
 }
 
 .iframe-section iframe {
-    width: 100%;
+    width: 560px;
     height: 315px;
     border: none;
     border-radius: 5px;
@@ -531,4 +531,5 @@ textarea {
     .grid-container {
         grid-template-columns: 1fr 4fr;
     }
+
 }
