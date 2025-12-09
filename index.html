@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Permet de rendre la page responsive en utilisant les medias queries -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page principale</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+<div class="grid-container">
+
+    <div class="header">
+        <h1>Bienvenue sur mon CV Personnel</h1>
+    </div>
+
+    <nav class="menu">
+        <div id="menu-toggle" class="menu-toggle">☰</div>
+            <ul id="menu-list">
+                <li><a href="#presentation" class="active">Présentation</a></li>
+                <li><a href="#formations">Formations</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#album">Album Photo</a></li>
+                <li><a href="#calendrier">Calendrier</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+    </nav>
+
+    <!-- Section présentation -->
+    <div id="presentation" class="presentation section fade-in">
+        <h2>Luca Ramampy</h2>
+        <img src="images/photo.png" alt="Photo de profil" class="profile-img">
+        <p><strong>Étudiant en développement informatique à Lyon</strong></p>
+        <p>Passionné de technologies, de jeux-vidéos et de 3D.</p>
+    </div>
+
+    <!-- Affichage des formations-->
+    <div id="formations" class="formations section fade-in">
+        <h2>Mes Formations</h2>
+
+        <table class="table-formations">
+            <thead>
+            <tr>
+                <th>Année</th>
+                <th>Diplôme</th>
+                <th>Institution / École</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2025 – Présent</td>
+                <td>Bachelor Développement informatique : Année 1</td>
+                <td>CESI École d'Ingénieur – LYON</td>
+            </tr>
+            <tr class="details">
+                <td colspan="3">
+                    Formations : Programmation orientée objet, bases de données, développement web, C, HTML, CSS, JavaScript.
+                </td>
+            </tr>
+
+            <tr>
+                <td>2019 – 2021</td>
+                <td>Bachelor 3D Cinéma Art & Animation : Année 2 & 3</td>
+                <td>École Bellecour – LYON</td>
+            </tr>
+            <tr class="details">
+                <td colspan="3">
+                    Spécialisation en 3D Image – Modélisation Personnages et Rigging Facial.
+                </td>
+            </tr>
+
+            <tr>
+                <td>2018 – 2019</td>
+                <td>Bachelor 3D Cinéma Art & Animation : Année 1</td>
+                <td>École Bellecour – LYON</td>
+            </tr>
+            <tr class="details">
+                <td colspan="3">
+                    Formation aux spécialisations de la conception digitale pour les secteurs du cinéma d'animation.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Affichage des experiences-->
+    <div id="experiences" class="experiences section fade-in">
+        <h2>Mes Expériences Professionnelles</h2>
+
+        <div class="experience fade-in">
+            <h3>Projet Métier - Système de Pointage</h3>
+            <p><strong>Cadre :</strong> Formation CESI</p>
+            <p><strong>Lieu :</strong> LYON </p>
+            <p><strong>Missions :</strong></p>
+            <ul>
+                <li>Mise en place d'un système d'exploitation sur Raspberry(Linux) et connexion d'un capteur de radio-identification(RFID)</li>
+                <li>Intégration d'un système de contrôle de versions(Git)</li>
+                <li>Définition de la modélisation des données(Modèles logique(MLD) et conceptuel(MCD)</li>
+                <li>Réalisation d'une base de données(MariaDB)</li>
+                <li>Réalisation du système en langage Python en programmation orienté objet(POO)</li>
+            </ul>
+            <p><strong>Outils utilisés :</strong></p>
+            <p>Git, PyCharm, Python, MariaDB</p>
+        </div>
+
+        <div class="experience fade-in">
+            <h3>Projet Métier -  Base de données </h3>
+            <p><strong>Cadre :</strong> Formation CESI</p>
+            <p><strong>Lieu :</strong> LYON </p>
+            <p><strong>Missions :</strong></p>
+            <ul>
+                <li>Définition de la modélisation des données(Modèles logique(MLD) et conceptuel(MCD) </li>
+                <li>Réalisation d'une base de données(MySQL)</li>
+                <li>Collection des données via un formulaire HTML et traitement en PHP</li>
+                <li>Stockage, interrogation et affichage des données via une interface web(HTML et CSS)</li>
+            </ul>
+            <p><strong>Outils utilisés :</strong></p>
+            <p>EditPlus, JMerise, MySQL, HTML, CSS, PHP</p>
+        </div>
+
+        <div class="experience fade-in">
+            <h3>Projet Métier - Programmation Jeu du Pendu</h3>
+            <p><strong>Cadre :</strong> Formation CESI</p>
+            <p><strong>Lieu :</strong> LYON </p>
+            <p><strong>Missions :</strong></p>
+            <ul>
+                <li>Conception du jeu du pendu jouable sur lignes de commandes</li>
+                <li>Déduction et conception d'un algorithme</li>
+                <li>Implémentation des différentes spécificités de la programmation</li>
+                <li>Création des opérations logiques</li>
+                <li>Approfondissement du langage de programmation C</li>
+            </ul>
+            <p><strong>Outils utilisés :</strong></p>
+            <p>EditPlus, C</p>
+        </div>
+
+        <div class="experience fade-in">
+            <h3>Artiste 3D</h3>
+            <p><strong>Entreprise :</strong> <a href="https://www.stimstudio.com/fr/">StimStudio</a></p>
+            <p><strong>Lieu :</strong> LYON </p>
+            <p><strong>Dates :</strong> Octobre 2021 – Octobre 2022</p>
+            <p><strong>Missions :</strong></p>
+            <ul>
+                <li>Création de modèles 3D de personnages pour le secteur du cinéma d'animation.</li>
+                <li>Mise en place de systèmes de Rigging et création de Facial Shapes.</li>
+                <li>Remise et présentation des modèles - Retours client et Modifications</li>
+                <li>Collaboration avec les autres corps de métiers du pipeline de production.</li>
+            </ul>
+            <p><strong>Outils utilisés :</strong></p>
+            <p>ZBrush, Maya, Python, Blendshape Combination System (BCS)</p>
+
+            <div class="iframe-section">
+                <h2>Portfolio Video</h2>
+                <iframe
+                        title="YouTube video player"
+                        width="100%"
+                        height="315"
+                        src="https://player.vimeo.com/video/837904398?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0"
+                        allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+
+        <div class="experience fade-in">
+            <h3>Etudiant Artiste 3D - Projet de fin d'année</h3>
+            <p><strong>Ecole :</strong> Ecole Bellecour</p>
+            <p><strong>Lieu :</strong> LYON </p>
+            <p><strong>Dates :</strong> Octobre 2020 – Octobre 2021</p>
+            <p><strong>Missions :</strong></p>
+            <ul>
+                <li>Création des modèles 3D des personnages.</li>
+                <li>Mise en place de systèmes de Rigging et création de Facial Shapes.</li>
+                <li>Modélisation et Rigging des props.</li>
+                <li>Look-Dev props et environnement.</li>
+                <li>Compositing.</li>
+            </ul>
+            <p><strong>Outils utilisés :</strong></p>
+            <p>ZBrush, Maya, Python, Blendshape Combination System (BCS), Substance Painter, DaVinci Resolve</p>
+
+            <div class="iframe-section">
+                <h2>Court-métrage d'animation</h2>
+                <iframe 
+					title="YouTube video player"
+					width="100%" 
+					height="315" 
+					src="https://www.youtube.com/embed/_lezCJHhXvQ?si=yjxsisvNXqCRLEiN" 
+					frameborder="0" 
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+					allowfullscreen
+				></iframe>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="competences" class="competences section fade-in">
+        <h2>Mes Compétences</h2>
+
+        <div class="competence-group fade-in">
+            <h3>Développement Web</h3>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Responsive Design</li>
+            </ul>
+        </div>
+
+        <div class="competence-group fade-in">
+            <h3>Outils & Technologies</h3>
+            <ul>
+                <li>Git & GitHub</li>
+                <li>Linux, Python</li>
+                <li>Blender, Maya</li>
+                <li>Raspberry</li>
+                <li>MariaDB, MySQL</li>
+            </ul>
+        </div>
+
+        <div class="competence-group fade-in">
+            <h3>Soft Skills</h3>
+            <ul>
+                <Li>Autonomie</Li>
+                <li>Travail en équipe</li>
+                <li>Esprit d'analyse</li>
+                <li>Communication</li>
+                <li>Gestion du temps</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Affichage de l'album photo-->
+    <div id="album" class="album section fade-in">
+        <h2>Mon Album Photo</h2>
+        <div class="album-grid fade-in">
+            <img src="images/placeholder.png" alt="Photo 1">
+            <img src="images/placeholder.png" alt="Photo 2">
+            <img src="images/placeholder.png" alt="Photo 3">
+            <img src="images/placeholder.png" alt="Photo 4">
+            <img src="images/placeholder.png" alt="Photo 5">
+            <img src="images/placeholder.png" alt="Photo 6">
+        </div>
+    </div>
+
+    <!-- Affichage calendrier -->
+    <div id="calendrier" class="calendrier section fade-in">
+        <h2>Calendrier – Novembre 2025</h2>
+
+        <table class="table-calendrier fade-in">
+            <thead>
+            <tr>
+                <th>Dim</th>
+                <th>Lun</th>
+                <th>Mar</th>
+                <th>Mer</th>
+                <th>Jeu</th>
+                <th>Ven</th>
+                <th>Sam</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td> <!-- Dim -->
+                <td></td> <!-- Lun -->
+                <td></td> <!-- Mar -->
+                <td></td> <!-- Mer -->
+                <td></td> <!-- Jeu -->
+                <td></td> <!-- Ven -->
+                <td>1</td> <!-- Sam -->
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="event" data-info="Projet Pointage">3<br>Livraison Projet Pointage</td>
+                <td class="event" data-info="Projet Site Web Statique">4<br>Livraison Projet Site Web Statique</td>
+                <td class="event" data-info="Club Robotique au FabLab (https://lyon.cesi.fr/campus/environnement-technologique-fablab/) | Stage Dating (https://lyon.cesi.fr/agenda/entreprises-recrutez-votre-futur-talent-lors-de-notre-stage-dating/)">5<br>Club Robotique au FabLab<br>Stage Dating</td>
+                <td class="event" data-info="Projet Site Web Dynamique">6<br>Livraison Projet Site Web Dynamique</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div id="event-details" class="event-details"></div>
+    </div>
+
+    <div id="contact" class="contact section fade-in">
+        <h2>Contacts</h2>
+        <!-- Liens de contact -->
+        <p><a href="https://linkedin.com/in/luca-ramampy" target="_blank">Linkedin</a></p>
+        <p><a href="https://github.com/LucaRabbit" target="_blank">GitHub</a></p>
+
+        <!-- Formulaire de contact par mail -->
+        <p>Par Email : </p>
+        <form action="mailto:luca.ramampy@viacesi.com" method="post" enctype="text/plain" class="contact-form fade-in">
+            <!-- Champ Nom -->
+            <div class="form">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="Nom" placeholder="Entrez votre nom" required>
+            </div>
+
+            <!-- Champ Prénom -->
+            <div class="form">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="Prénom" placeholder="Entrez votre prénom" required>
+            </div>
+
+            <!-- Champ Email -->
+            <div class="form">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="Email" placeholder="exemple@email.com" required>
+            </div>
+
+            <!-- Champ message -->
+            <div class="form">
+                <label for="message">Message :</label>
+                <textarea id="message" name="Message" placeholder="Entrez votre message ici" rows="5" required></textarea>
+            </div>
+
+            <!-- Boutons -->
+            <div class="form">
+                <input type="submit" value="Envoyer">
+                <input type="reset" value="Réinitialiser">
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p></p>
+</div>
+
+<!-- Lien vers le fichier JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
