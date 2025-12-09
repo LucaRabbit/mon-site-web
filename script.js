@@ -23,25 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el); // Observe chaque bloc
     });
 
-    // Change la transparence du menu
-    const OpacityMenu = document.querySelector('.menu');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 10) {
-            OpacityMenu.classList.add('scrolled');
-            console.log('Scroll détecté')
-        } else {
-            OpacityMenu.classList.remove('scrolled');
-        }
-    });
-
 
     // Centrer verticalement la section ciblée
     const links = document.querySelectorAll('.menu a');
 
     links.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault(); // Empêche le saut brutal
+
+            // Vérification des liens
+            if (!href.startsWith('#')) { // Si ce n'est pas un anchor
+            return; // Pas de preventDefault()
+            }
+
+            e.preventDefault(); // Empêche le saut brutal des anchors internes
 
             const targetId = link.getAttribute('href').substring(1); // Enlève le #
             const targetSection = document.getElementById(targetId);
@@ -82,17 +76,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Fonction pour afficher en popup le contenu associé à une image lorsqu'on clique dessus
 function openPopup(id) {
-      const contenuPopup = document.getElementById(id).innerHTML;
-      document.getElementById('popup-body').innerHTML = contenuPopup;
-      document.getElementById('popup').style.display = 'flex';
+    const contenuPopup = document.getElementById(id).innerHTML;
+    document.getElementById('popup-body').innerHTML = contenuPopup;
+    document.getElementById('popup').style.display = 'flex';
+}
+// Fermer le popup en cliquant sur la croix ou en dehors de l'affichage
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+window.onclick = function(event) {
+    const popup = document.getElementById('popup');
+    if (event.target === popup) {
+    closePopup();
     }
-    // Fermer le popup en cliquant sur la croix ou en dehors de l'affichage
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-    }
-    window.onclick = function(event) {
-      const popup = document.getElementById('popup');
-      if (event.target === popup) {
-        closePopup();
-      }
-    }
+}
