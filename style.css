@@ -71,7 +71,11 @@ header, footer {
     width: 100%;
     margin: 0;
     padding: 20px;
+    text-align: center;
+    color: var(--color-accent);
     box-sizing: border-box;
+    background-color: var(--color-dark);
+
 }
 
 /* === MENU NAVIGATION === */
