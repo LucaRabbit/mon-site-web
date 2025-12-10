@@ -66,12 +66,12 @@ body {
     display: none;
 }
 
-/* === HEADER === */
-header {
-    color: var(--color-accent);
-    text-align: center;
+/* === HEADER / FOOTER === */
+header, footer {
+    width: 100%;
+    margin: 0;
     padding: 20px;
-    background-color: var(--color-primary);
+    box-sizing: border-box;
 }
 
 /* === MENU NAVIGATION === */
@@ -109,17 +109,17 @@ header {
 /* Liste sur mobile */
 @media (max-width: 600px) {
     .menu ul {
-        display: none; /* important pour ton JS */
+        display: none;
         flex-direction: column;
         width: 100%;
     }
 
     .menu ul.show {
-        display: flex; /* réouverture via JS */
+        display: flex;
     }
 
     .menu-toggle {
-        display: block; /* bouton visible */
+        display: block;
     }
 }
 
@@ -318,9 +318,11 @@ header {
     grid-area: iframe;
 }
 
+
 .iframe-section iframe {
-    width: 560px;
-    height: 315px;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
     border: none;
     border-radius: 5px;
 }
