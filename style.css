@@ -14,7 +14,7 @@
     --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/*  === RESET ET BASE === */
+/* === RESET ET BASE === */
 * {
     box-sizing: border-box;
 }
@@ -32,15 +32,15 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-    "menu"
-    "contenu"
-    "presentation"
-    "formations"
-    "experiences"
-    "competences"
-    "iframe"
-    "events"
-    "contact";
+        "menu"
+        "contenu"
+        "presentation"
+        "formations"
+        "experiences"
+        "competences"
+        "iframe"
+        "events"
+        "contact";
     gap: 10px;
     max-width: 1200px;
     margin: 0 auto;
@@ -79,47 +79,66 @@ header {
 .menu {
     grid-area: menu;
     position: sticky;
-    top: 0px;
-    z-index: 1000; /* Pour rester au-dessus des autres éléments */
-    padding: 10px 10px;
+    top: 0;
+    z-index: 1000;
+    padding: 10px;
     background-color: var(--color-dark);
-    box-shadow: var(--shadow);
     border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
+/* Bouton hamburger sur mobile*/
 .menu-toggle {
     display: none;
+    color: white;
+    font-size: 1.8rem;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
+/* Liste sur desktop*/
 .menu ul {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+    list-style: none;
     margin: 0;
     padding: 0;
+    display: flex; /* desktop */
+    justify-content: center;
+    gap: 10px;
+    transition: max-height 0.3s ease;
 }
 
-.menu ul.show {
-    display: flex;
+/* Liste sur mobile */
+@media (max-width: 600px) {
+    .menu ul {
+        display: none; /* important pour ton JS */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu ul.show {
+        display: flex; /* réouverture via JS */
+    }
+
+    .menu-toggle {
+        display: block; /* bouton visible */
+    }
 }
 
+/* Liens du menu*/
 .menu li {
-    flex: 1 1 auto;
     text-align: center;
-    list-style: none;
 }
 
-/* Liens */
 .menu a {
     display: block;
     padding: 14px 20px;
     color: white;
     text-decoration: none;
-    transition: background-color 0.3s ease;
     border-radius: var(--radius);
+    transition: background-color 0.3s ease;
 }
 
-/* Effet au survol des liens */
+/* Effet au survol */
 .menu a:hover {
     background-color: var(--color-secondary);
 }
@@ -130,18 +149,12 @@ header {
     background-color: var(--color-accent);
 }
 
-/* === SECTIONS === */
-.section {
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* === FOOTER === */
-footer {
-    grid-area: footer;
-    color: var(--color-accent);
-    text-align: center;
-    padding: 20px;
-    background-color: var(--color-primary);
+/* Liens + gros sur mobile) */
+@media (max-width: 600px) {
+    .menu ul li a {
+        font-size: 1.4rem;
+        padding: 12px 20px;
+    }
 }
 
 /* === PRESENTATION === */
@@ -170,28 +183,6 @@ footer {
     text-decoration: underline;
 }
 
-.contact {
-    grid-area: contact;
-    text-align: center;
-}
-
-/* === TABLE === */
-th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-
-thead {
-    background-color: var(--color-dark);
-    color: white;
-}
-
-tbody tr:nth-child(even) {
-    background-color: var(--color-light);
-}
-
-
 /* === FORMATIONS === */
 .formations {
     grid-area: formations;
@@ -203,7 +194,8 @@ tbody tr:nth-child(even) {
     margin-top: 20px;
 }
 
-.table-formations th, .table-formations td {
+.table-formations th,
+.table-formations td {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: left;
@@ -255,12 +247,11 @@ tbody tr:nth-child(even) {
     transition: color 0.2s ease;
 }
 
-/* Effet au survol des liens*/
+/* Effet au survol des liens */
 .experience a:hover {
     color: var(--color-dark);
     text-decoration: underline;
 }
-
 
 /* === COMPETENCES === */
 .competences {
@@ -292,7 +283,7 @@ tbody tr:nth-child(even) {
 }
 
 .competence-group h3 {
-    text-align: center; 
+    text-align: center;
     margin-bottom: 10px;
     color: var(--color-accent);
 }
@@ -304,12 +295,12 @@ tbody tr:nth-child(even) {
 }
 
 .competence-group ul {
-    color:var(--color-accent);
+    color: var(--color-accent);
     list-style: disc;
     padding-left: 20px;
 }
 
-/* iframe section */
+/* === IFRAME SECTION === */
 .iframe-section {
     grid-area: iframe;
 }
@@ -322,34 +313,79 @@ tbody tr:nth-child(even) {
 }
 
 /* === EVENEMENTS === */
+
+.intro {
+    grid-column: 1 / 3;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 0 auto;
+}
+
 .events {
     grid-area: events;
 }
 
+/* Grille images */
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 
-/* Effet au survol */
-.events-grid img:hover {
+/* Container image */
+.event-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Effet au survol des container images */
+.events-grid .event-item:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Images */
 .events-grid img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     cursor: pointer;
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* === POP UP === */
+/* Texte image */
+.event-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 0.9rem;
+}
 
+/* Affiche le texte au survol */
+.event-item:hover .event-text {
+    opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* === POP UP === */
 /* Pour empecher la page de scroll quand popup est ouvert */
 body.no-scroll {
     overflow: hidden;
@@ -359,7 +395,8 @@ body.no-scroll {
     display: none; /* hidden par défaut */
     position: fixed;
     z-index: 1000;
-    left: 0; top: 0;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.6);
@@ -381,14 +418,15 @@ body.no-scroll {
     animation: fadeIn 0.4s ease;
 }
 
+/* Titre popup */
 .popup-contenu h3 {
-    text-align: center;
     grid-column: 2;
     grid-row: 1;
+    text-align: center;
     margin-top: 0;
 }
 
-/* Container */
+/* Container popup pour les détails */
 .eventdetail-grid {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -398,7 +436,7 @@ body.no-scroll {
     align-items: start;
 }
 
-/* Images */
+/* Images popup */
 .eventdetail-grid img {
     grid-column: 1;
     width: 100%;
@@ -406,6 +444,7 @@ body.no-scroll {
     border-radius: 5px;
 }
 
+/* Texte popup */
 .eventdetail-grid p {
     grid-column: 2;
     grid-row: 1;
@@ -415,20 +454,28 @@ body.no-scroll {
     align-self: start;
 }
 
-
+/* Bouton fermer */
 .close {
-position: absolute;
-top: 10px; right: 15px;
-font-size: 24px;
-font-weight: bold;
-color: #333;
-cursor: pointer;
-}
-@keyframes fadeIn {
-from { opacity: 0; transform: translateY(-20px); }
-to { opacity: 1; transform: translateY(0); }
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
 }
 
+/* Animation popup */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* === CONTACT === */
 .contact {
@@ -485,7 +532,6 @@ to { opacity: 1; transform: translateY(0); }
     transform: translateY(-8px) scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
-
 
 /* === FORMULAIRE === */
 .contact-form {
@@ -548,22 +594,30 @@ textarea {
     background-color: var(--color-secondary);
 }
 
+/* === FOOTER === */
+footer {
+    grid-area: footer;
+    color: var(--color-accent);
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-primary);
+}
 
-/* Responsive Design */
+/* === RESPONSIVE DESIGN === */
 /* Desktop */
 @media (min-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr 3fr;
         grid-template-areas:
-      "menu menu"
-      "contenu contenu"
-      "presentation presentation"
-      "formations formations"
-      "experiences experiences"
-      "competences competences"
-      "iframe iframe"
-      "events events"
-      "contact contact";
+            "menu menu"
+            "contenu contenu"
+            "presentation presentation"
+            "formations formations"
+            "experiences experiences"
+            "competences competences"
+            "iframe iframe"
+            "events events"
+            "contact contact";
     }
 
     .menu-toggle {
@@ -588,44 +642,32 @@ textarea {
         width: auto;
     }
 
-    /* Liens */
     .menu a {
         padding: 12px;
         font-size: 1em;
     }
 }
 
-/* Tablettes, smartphones */
+/* Tablette, mobile */
 @media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "menu"
+            "contenu"
+            "presentation"
+            "formations"
+            "experiences"
+            "competences"
+            "iframe"
+            "events"
+            "contact";
+    }
 
-    /* Centré horizontalement*/
     .menu {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    /* Bouton hamburger + grand */
-    .menu-toggle {
-        display: block;
-        color: white;
-        font-size: 1.8rem;
-        padding: 10px 15px;
-    }
-
-    .menu ul {
-        display: none;
-        flex-direction: column;
-    }
-
-    .menu ul.show {
-        display: flex;
-    }
-
-    /* Liens de menu + gros, + espacés */
-    .menu ul li a {
-        font-size: 1.4rem;
-        padding: 12px 20px;
     }
 
     .competences {
@@ -634,7 +676,8 @@ textarea {
         gap: 20px;
     }
 
-    header, footer {
+    header,
+    footer {
         display: flex;
     }
 }

@@ -5,31 +5,80 @@
     <meta charset="UTF-8" />
     <!-- Permet de rendre la page responsive en utilisant les medias queries -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Evenements</title>
+    <title>Page Evénements</title>
     <link rel="stylesheet" href="style.css" />
 
 </head>
 
-
 <body>
+
+<header>
+        <h1>EVÉNEMENTS</h1>
+</header>
+
 <div class="grid-container">
+    <!-- Texte d'introduction -->
+    <p class="intro">
+        Texte d'introduction à la page : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
 
-    <div class="header">
-        <h1>EVENEMENTS</h1>
-    </div>
-
-        <!-- Affichage des evenements-->
+    <!-- Affichage des evenements-->
     <div id="events" class="events section fade-in">
         <div class="events-grid">
-            <img src="images/placeholder.png" alt="Photo" onClick="openPopup('eventdetail1')">
-            <img src="images/placeholder.png" alt="Photo" onClick="openPopup('eventdetail1')">
-            <img src="images/placeholder.png" alt="Photo" onClick="openPopup('eventdetail1')">
-            <img src="images/placeholder.png" alt="Photo" onClick="openPopup('eventdetail1')">
-            <img src="images/placeholder.png" alt="Photo" onClick="openPopup('eventdetail1')">
-            <img src="images/placeholder.png" alt="Photo" onClick="openPopup('eventdetail1')">
+
+            <!-- Event 1-->
+            <div class="event-item" onClick="openPopup('eventdetail1')">
+                <img src="images/placeholder.png" alt="Photo" />
+                <div class="event-text">
+                    Description de l'événement 1
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="event-item" onClick="openPopup('eventdetail1')">
+                <img src="images/placeholder.png" alt="Photo" />
+                <div class="event-text">
+                    Description de l'événement 2
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="event-item" onClick="openPopup('eventdetail1')">
+                <img src="images/placeholder.png" alt="Photo" />
+                <div class="event-text">
+                    Description de l'événement 3
+                </div>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="event-item" onClick="openPopup('eventdetail1')">
+                <img src="images/placeholder.png" alt="Photo" />
+                <div class="event-text">
+                    Description de l'événement 4
+                </div>
+            </div>
+
+            <!-- Event 5 -->
+            <div class="event-item" onClick="openPopup('eventdetail1')">
+                <img src="images/placeholder.png" alt="Photo" />
+                <div class="event-text">
+                    Description de l'événement 5
+                </div>
+            </div>
+
+            <!-- Event 6 -->
+            <div class="event-item" onClick="openPopup('eventdetail1')">
+                <img src="images/placeholder.png" alt="Photo" />
+                <div class="event-text">
+                    Description de l'événement 6
+                </div>
+            </div>
+
         </div>
     </div>
 
+
+    <!-- Popup -->
     <div id="popup" class="popup">
         <div class="popup-contenu">
         <span class="close" onclick="closePopup()">&times;</span>
@@ -37,6 +86,7 @@
         </div>
     </div>
 
+    <!-- Détail événement -->
     <div id="eventdetail1" class="hidden">
         <div class="eventdetail-grid">
             <h3>Nom evénement</h3>
