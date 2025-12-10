@@ -311,6 +311,7 @@ header {
         width: 90%;
         height: auto;
     }
+
 }
 
 /* === IFRAME SECTION === */
@@ -635,20 +636,7 @@ footer {
 /* === RESPONSIVE DESIGN === */
 /* Desktop */
 @media (min-width: 600px) {
-    .grid-container {
-        grid-template-columns: 1fr 3fr;
-        grid-template-areas:
-            "menu menu"
-            "contenu contenu"
-            "presentation presentation"
-            "formations formations"
-            "experiences experiences"
-            "competences competences"
-            "iframe iframe"
-            "events events"
-            "contact contact";
-    }
-
+    
     .menu-toggle {
         display: none;
     }
@@ -679,24 +667,14 @@ footer {
 
 /* Tablette, mobile */
 @media (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "menu"
-            "contenu"
-            "presentation"
-            "formations"
-            "experiences"
-            "competences"
-            "iframe"
-            "events"
-            "contact";
-    }
-
+    /* Menu hamburger */
     .menu {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    body {
+        background-color: var(--color-bg);
+    }
 }
