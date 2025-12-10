@@ -48,6 +48,17 @@ body {
     background-color: var(--color-bg);
 }
 
+/* Mobile */
+@media (max-width: 600px) {
+    .grid-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        margin: 0;
+        overflow-x: hidden;
+    }
+}
+
 /* ==== EFFETS === */
 .fade-in {
     opacity: 0; /* invisible */
@@ -84,6 +95,7 @@ header, footer {
         color: var(--color-accent);
         padding: 20px;
         width: 100%;
+        box-sizing: border-box;
     }
 }
 
