@@ -308,7 +308,7 @@ header {
 
     .competence-box {
         width: 90%;
-        height: auto;
+        height: 90%;
     }
 
 }
@@ -670,6 +670,11 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .grid-container {
+        min-height: 100vh;
+        background-color: var(--color-bg);
     }
 
     body {
