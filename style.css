@@ -477,6 +477,21 @@ body.no-scroll {
     }
 }
 
+/* Mobile */
+@media (max-width: 600px) {
+    .eventdetail-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .eventdetail-grid img,
+    .eventdetail-grid p,
+    .eventdetail-grid h3 {
+        grid-column: 1;
+    }
+}
+
+
 /* === CONTACT === */
 .contact {
     grid-area: contact;
@@ -676,8 +691,28 @@ footer {
         gap: 20px;
     }
 
-    header,
-    footer {
-        display: flex;
+    html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
+
+    .grid-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 10px;
+        background-color: var(--color-bg);
+    }
+
+    header, footer {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        background-color: var(--color-primary);
+    }
+
 }
