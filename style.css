@@ -489,6 +489,7 @@ body.no-scroll {
     .eventdetail-grid h3 {
         grid-column: 1;
     }
+
 }
 
 
@@ -690,29 +691,5 @@ footer {
         display: flex;
         gap: 20px;
     }
-
-    html, body {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .grid-container {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 10px;
-        background-color: var(--color-bg);
-    }
-
-    header, footer {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-        background-color: var(--color-primary);
-    }
-
+    
 }
