@@ -68,7 +68,6 @@ body {
 
 /* === HEADER === */
 header {
-    grid-area: header;
     color: var(--color-accent);
     text-align: center;
     padding: 20px;
@@ -626,7 +625,6 @@ textarea {
 
 /* === FOOTER === */
 footer {
-    grid-area: footer;
     color: var(--color-accent);
     text-align: center;
     padding: 20px;
