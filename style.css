@@ -24,7 +24,7 @@ body {
     font-size: var(--font-size);
     margin: 0;
     padding: 0;
-    background-color: var(--color-light);
+    background-color: var(--color-dark);
 }
 
 /* === CONTAINER PRINCIPAL === */
@@ -55,6 +55,7 @@ body {
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+/* Affichage */
 .fade-in.in-view {
     opacity: 1; /* visible */
     transform: translateY(0);
@@ -108,6 +109,7 @@ header {
     list-style: none;
 }
 
+/* Liens */
 .menu a {
     display: block;
     padding: 14px 20px;
@@ -117,10 +119,12 @@ header {
     border-radius: var(--radius);
 }
 
+/* Effet au survol des liens */
 .menu a:hover {
     background-color: var(--color-secondary);
 }
 
+/* Lien actif */
 .menu a.active {
     color: black;
     background-color: var(--color-accent);
@@ -146,6 +150,7 @@ footer {
     text-align: center;
 }
 
+/* Images */
 .profile-img {
     width: 150px;
     height: 150px;
@@ -154,11 +159,13 @@ footer {
     margin: 0 auto 20px;
 }
 
+/* Liens */
 .presentation a {
     color: var(--color-secondary);
     text-decoration: none;
 }
 
+/* Effet au survol des liens */
 .presentation a:hover {
     text-decoration: underline;
 }
@@ -226,14 +233,34 @@ tbody tr:nth-child(even) {
 .experience {
     background-color: var(--color-light);
     border-left: 4px solid var(--color-gray);
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.experience a{
-    text-decoration: none;
+/* Effet au survol */
+.experience:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    border-left-color: var(--color-primary);
 }
+
+/* Liens */
+.experience a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+/* Effet au survol des liens*/
+.experience a:hover {
+    color: var(--color-dark);
+    text-decoration: underline;
+}
+
 
 /* === COMPETENCES === */
 .competences {
@@ -245,6 +272,7 @@ tbody tr:nth-child(even) {
     justify-content: center;
 }
 
+/* Container */
 .competence-group {
     display: flex;
     flex-direction: row;
@@ -269,6 +297,7 @@ tbody tr:nth-child(even) {
     color: var(--color-accent);
 }
 
+/* Effet au survol */
 .competence-box:hover {
     transform: scale(1.01);
     box-shadow: var(--shadow);
@@ -303,11 +332,13 @@ tbody tr:nth-child(even) {
     gap: 10px;
 }
 
+/* Effet au survol */
 .events-grid img:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow);
 }
 
+/* Images */
 .events-grid img {
     width: 100%;
     height: 100%;
@@ -336,6 +367,7 @@ body.no-scroll {
     align-items: center;
 }
 
+/* Container */
 .popup-contenu {
     gap: 10px;
     background: #fff;
@@ -356,6 +388,7 @@ body.no-scroll {
     margin-top: 0;
 }
 
+/* Container */
 .eventdetail-grid {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -365,6 +398,7 @@ body.no-scroll {
     align-items: start;
 }
 
+/* Images */
 .eventdetail-grid img {
     grid-column: 1;
     width: 100%;
@@ -399,41 +433,66 @@ to { opacity: 1; transform: translateY(0); }
 /* === CONTACT === */
 .contact {
     grid-area: contact;
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--color-light);
+    border-radius: var(--radius);
 }
 
+/* Titre */
+.contact h2 {
+    margin-bottom: 30px;
+    color: var(--color-primary);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Container */
 .contact-links {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 10px;
 }
 
+/* Liens */
 .contact-links a {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
     width: 150px;
-    height: 150px;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    margin: auto 10px auto 10px;
     text-decoration: none;
     color: var(--color-accent);
     box-shadow: var(--shadow);
     border-radius: var(--radius);
-    background-color: var(--color-dark);
-    transition: background-color 0.3s ease;
+    background: var(--color-dark);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact a:hover {
+/* Effet au survol */
+.contact-links a:hover {
+    color: var(--color-light);
     background-color: var(--color-secondary);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
+
 
 /* === FORMULAIRE === */
 .contact-form {
     gap: 20px;
     margin-top: 20px;
+    max-width: 600px;
+    margin: auto;
 }
 
 .contact-form .form {
@@ -447,6 +506,7 @@ to { opacity: 1; transform: translateY(0); }
     color: var(--color-primary);
 }
 
+/* Zone de texte */
 textarea {
     resize: none;
 }
@@ -464,10 +524,11 @@ textarea {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: var(--color-secondary);
     outline: none;
+    border-color: var(--color-secondary);
 }
 
+/* Boutons */
 .contact-form input[type="submit"],
 .contact-form input[type="reset"] {
     width: 150px;
@@ -481,6 +542,7 @@ textarea {
     transition: background-color 0.3s ease;
 }
 
+/* Effet au survol */
 .contact-form input[type="submit"]:hover,
 .contact-form input[type="reset"]:hover {
     background-color: var(--color-secondary);
@@ -526,6 +588,7 @@ textarea {
         width: auto;
     }
 
+    /* Liens */
     .menu a {
         padding: 12px;
         font-size: 1em;
@@ -535,16 +598,19 @@ textarea {
 /* Tablettes, smartphones */
 @media (max-width: 600px) {
 
-    /* Centre horizontalement le menu hamburger */
+    /* Centré horizontalement*/
     .menu {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    /* Bouton hamburger + grand */
     .menu-toggle {
         display: block;
         color: white;
+        font-size: 1.8rem;
+        padding: 10px 15px;
     }
 
     .menu ul {
@@ -556,9 +622,19 @@ textarea {
         display: flex;
     }
 
+    /* Liens de menu + gros, + espacés */
+    .menu ul li a {
+        font-size: 1.4rem;
+        padding: 12px 20px;
+    }
+
     .competences {
         grid-area: competences;
         display: flex;
         gap: 20px;
+    }
+
+    header, footer {
+        display: flex;
     }
 }
