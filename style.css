@@ -344,24 +344,27 @@ header, footer {
     }
 }
 
+
 /* === IFRAME SECTION === */
+/* Container responsive pour iframe */
 .iframe-section {
     grid-area: iframe;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    padding-bottom: 56.25%; /* ratio 16:9 */
+    height: 0;
 }
 
+/* Iframe responsive */
 .iframe-section iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 100%; /* Correction mobile */
-    height: auto;
+    height: 100%;
     border: none;
     border-radius: 5px;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .iframe-section iframe {
-        width: 100%;
-    }
 }
 
 /* === EVENEMENTS === */
