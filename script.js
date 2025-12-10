@@ -78,11 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function openPopup(id) {
     const contenuPopup = document.getElementById(id).innerHTML;
     document.getElementById('popup-body').innerHTML = contenuPopup;
+    
     document.getElementById('popup').style.display = 'flex';
+    document.body.classList.add("no-scroll");
 }
 // Fermer le popup en cliquant sur la croix ou en dehors de l'affichage
 function closePopup() {
     document.getElementById('popup').style.display = 'none';
+    document.body.classList.remove("no-scroll");
 }
 window.onclick = function(event) {
     const popup = document.getElementById('popup');

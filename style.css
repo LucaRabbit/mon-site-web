@@ -32,7 +32,6 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-    "header"
     "menu"
     "contenu"
     "presentation"
@@ -41,8 +40,7 @@ body {
     "competences"
     "iframe"
     "events"
-    "contact"
-    "footer";
+    "contact";
     gap: 10px;
     max-width: 1200px;
     margin: 0 auto;
@@ -68,13 +66,12 @@ body {
 }
 
 /* === HEADER === */
-.header {
+header {
     grid-area: header;
-    color: white;
+    color: var(--color-accent);
     text-align: center;
     padding: 20px;
     background-color: var(--color-primary);
-    border-radius: var(--radius);
 }
 
 /* === MENU NAVIGATION === */
@@ -135,13 +132,12 @@ body {
 }
 
 /* === FOOTER === */
-.footer {
+footer {
     grid-area: footer;
-    color: white;
+    color: var(--color-accent);
     text-align: center;
-    padding: 10px;
-    border-radius: var(--radius);
-    background-color: var(--color-dark);
+    padding: 20px;
+    background-color: var(--color-primary);
 }
 
 /* === PRESENTATION === */
@@ -235,6 +231,10 @@ tbody tr:nth-child(even) {
     border-radius: 5px;
 }
 
+.experience a{
+    text-decoration: none;
+}
+
 /* === COMPETENCES === */
 .competences {
     grid-area: competences;
@@ -253,12 +253,29 @@ tbody tr:nth-child(even) {
     gap: 100px;
 }
 
+.competence-box {
+    padding: 30px;
+    background-color: var(--color-dark);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    width: 300px;
+    height: 250px;
+    box-sizing: border-box;
+}
+
 .competence-group h3 {
+    text-align: center; 
     margin-bottom: 10px;
-    color: var(--color-primary);
+    color: var(--color-accent);
+}
+
+.competence-box:hover {
+    transform: scale(1.01);
+    box-shadow: var(--shadow);
 }
 
 .competence-group ul {
+    color:var(--color-accent);
     list-style: disc;
     padding-left: 20px;
 }
@@ -301,6 +318,12 @@ tbody tr:nth-child(even) {
 }
 
 /* === POP UP === */
+
+/* Pour empecher la page de scroll quand popup est ouvert */
+body.no-scroll {
+    overflow: hidden;
+}
+
 .popup {
     display: none; /* hidden par défaut */
     position: fixed;
@@ -320,11 +343,16 @@ tbody tr:nth-child(even) {
     border-radius: 8px;
     max-width: 80%;
     width: 90%;
+    max-height: 95vh;
+    overflow-y: auto;
     position: relative;
     animation: fadeIn 0.4s ease;
 }
 
 .popup-contenu h3 {
+    text-align: center;
+    grid-column: 2;
+    grid-row: 1;
     margin-top: 0;
 }
 
@@ -346,8 +374,11 @@ tbody tr:nth-child(even) {
 
 .eventdetail-grid p {
     grid-column: 2;
+    grid-row: 1;
+    margin-top: 30px;
     white-space: normal;
     word-wrap: break-word;
+    align-self: start;
 }
 
 
@@ -370,31 +401,37 @@ to { opacity: 1; transform: translateY(0); }
     grid-area: contact;
 }
 
-.contact a {
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
+    width: 150px;
+    height: 150px;
+    font-weight: bold;
     border: none;
+    cursor: pointer;
+    margin: auto 10px auto 10px;
     text-decoration: none;
-    font-size: 1em;
-    display: inline-block;
+    color: var(--color-accent);
     box-shadow: var(--shadow);
     border-radius: var(--radius);
-    background-color: var(--color-secondary);
+    background-color: var(--color-dark);
+    transition: background-color 0.3s ease;
 }
 
 .contact a:hover {
-    color: black;
-    background-color: var(--color-accent);
+    background-color: var(--color-secondary);
 }
 
 /* === FORMULAIRE === */
 .contact-form {
-    display: flex;
-    flex-direction: column;
     gap: 20px;
     margin-top: 20px;
 }
@@ -417,11 +454,11 @@ textarea {
 .contact-form input,
 .contact-form textarea {
     padding: 10px;
+    font-size: 1em;
+    box-shadow: var(--shadow);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    font-size: 1em;
     background-color: var(--color-bg);
-    box-shadow: var(--shadow);
     transition: border-color 0.3s ease;
 }
 
@@ -433,28 +470,29 @@ textarea {
 
 .contact-form input[type="submit"],
 .contact-form input[type="reset"] {
-    background-color: var(--color-secondary);
-    color: white;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
     border: none;
     cursor: pointer;
     font-weight: bold;
+    color: var(--color-accent);
+    background-color: var(--color-dark);
     transition: background-color 0.3s ease;
-    margin-top: 10px;
 }
 
 .contact-form input[type="submit"]:hover,
 .contact-form input[type="reset"]:hover {
-    color: black;
-    background-color: var(--color-accent);
+    background-color: var(--color-secondary);
 }
 
 
 /* Responsive Design */
+/* Desktop */
 @media (min-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr 3fr;
         grid-template-areas:
-      "header header"
       "menu menu"
       "contenu contenu"
       "presentation presentation"
@@ -463,8 +501,7 @@ textarea {
       "competences competences"
       "iframe iframe"
       "events events"
-      "contact contact"
-      "footer footer";
+      "contact contact";
     }
 
     .menu-toggle {
@@ -495,6 +532,7 @@ textarea {
     }
 }
 
+/* Tablettes, smartphones */
 @media (max-width: 600px) {
 
     /* Centre horizontalement le menu hamburger */
@@ -504,7 +542,6 @@ textarea {
         align-items: center;
     }
 
-    /*  */
     .menu-toggle {
         display: block;
         color: white;
@@ -525,10 +562,3 @@ textarea {
         gap: 20px;
     }
 }
-
-@media (min-width: 1024px) {
-    .grid-container {
-        grid-template-columns: 1fr 4fr;
-    }
-}
-

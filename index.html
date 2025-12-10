@@ -11,11 +11,12 @@
 </head>
 
 <body>
-<div class="grid-container">
 
-    <div class="header">
-        <h1>Bienvenue sur mon CV Personnel</h1>
-    </div>
+<header>
+    <h1>Bienvenue sur mon CV Personnel</h1>
+</header>
+
+<div class="grid-container">
 
     <nav class="menu">
         <div id="menu-toggle" class="menu-toggle">☰</div>
@@ -29,18 +30,20 @@
             </ul>
     </nav>
 
-    <!-- Section présentation -->
+    <!-- Début Section présentation -->
     <div id="presentation" class="presentation section fade-in">
         <h2>Luca Ramampy</h2>
         <img src="images/photo.png" alt="Photo de profil" class="profile-img">
         <p><strong>Étudiant en développement informatique à Lyon</strong></p>
         <p>Passionné de technologies, de jeux-vidéos et de 3D.</p>
     </div>
+    <!-- Fin Section présentation -->
 
-    <!-- Affichage des formations-->
+
+    <!--Début Affichage des formations-->
     <div id="formations" class="formations section fade-in">
         <h2>Mes Formations</h2>
-
+        <!-- Début Tableau-->
         <table class="table-formations">
             <thead>
             <tr>
@@ -84,9 +87,11 @@
             </tr>
             </tbody>
         </table>
+        <!-- Fin Tableau-->
     </div>
+    <!--Fin Affichage des formations-->
 
-    <!-- Affichage des experiences-->
+    <!-- Début Affichage des experiences-->
     <div id="experiences" class="experiences section fade-in">
         <h2>Mes Expériences Professionnelles</h2>
 
@@ -152,6 +157,7 @@
             <p><strong>Outils utilisés :</strong></p>
             <p>ZBrush, Maya, Python, Blendshape Combination System (BCS)</p>
 
+            <!-- Embedded video -->
             <div class="iframe-section">
                 <h2>Portfolio Video</h2>
                 <iframe
@@ -181,6 +187,7 @@
             <p><strong>Outils utilisés :</strong></p>
             <p>ZBrush, Maya, Python, Blendshape Combination System (BCS), Substance Painter, DaVinci Resolve</p>
 
+            <!-- Embedded video -->
             <div class="iframe-section">
                 <h2>Court-métrage d'animation</h2>
                 <iframe 
@@ -195,13 +202,17 @@
 				></iframe>
             </div>
         </div>
-
+    
     </div>
+    <!-- Fin Affichage des experiences-->
 
+    <!-- Début Affichage des compétences-->
     <div id="competences" class="competences section fade-in">
         <h2>Mes Compétences</h2>
+
         <div class="competence-group">
-            <div>
+
+            <div class="competence-box">
                 <h3>Développement Web</h3>
                 <ul>
                     <li>HTML, CSS, JavaScript</li>
@@ -209,7 +220,7 @@
                 </ul>
             </div>
 
-            <div>
+            <div class="competence-box">
                 <h3>Outils & Technologies</h3>
                 <ul>
                     <li>Git & GitHub</li>
@@ -220,7 +231,7 @@
                 </ul>
             </div>
 
-            <div>
+            <div class="competence-box">
                 <h3>Soft Skills</h3>
                 <ul>
                     <Li>Autonomie</Li>
@@ -231,29 +242,21 @@
                 </ul>
             </div>
         </div>
-    </div>
 
+    </div>
+    <!-- Fin Affichage des compétences-->
+
+    <!-- Début Section Contact-->
     <div id="contact" class="contact section fade-in">
         <h2>Contacts</h2>
         <!-- Liens de contact -->
-        <p><a href="https://linkedin.com/in/luca-ramampy" target="_blank">Linkedin</a></p>
-        <p><a href="https://github.com/LucaRabbit" target="_blank">GitHub</a></p>
-
-        <!-- Formulaire de contact par mail -->
-        <p>Par Email : </p>
+         <div class="contact-links">
+            <a href="https://linkedin.com/in/luca-ramampy" target="_blank">Linkedin</a>
+            <a href="https://github.com/LucaRabbit" target="_blank">GitHub</a>
+        </div>
+        <!-- Début Formulaire de contact par mail -->
         <form action="mailto:luca.ramampy@viacesi.com" method="post" enctype="text/plain" class="contact-form">
-            <!-- Champ Nom -->
-            <div class="form">
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="Nom" placeholder="Entrez votre nom" required>
-            </div>
-
-            <!-- Champ Prénom -->
-            <div class="form">
-                <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="Prénom" placeholder="Entrez votre prénom" required>
-            </div>
-
+            
             <!-- Champ Email -->
             <div class="form">
                 <label for="email">Email :</label>
@@ -266,19 +269,18 @@
                 <textarea id="message" name="Message" placeholder="Entrez votre message ici" rows="5" required></textarea>
             </div>
 
-            <!-- Boutons -->
-            <div class="form">
+            <!-- Boutons de submission et reset-->
+            <div>
                 <input type="submit" value="Envoyer">
                 <input type="reset" value="Réinitialiser">
             </div>
         </form>
+        <!-- Fin Formulaire de contact par mail -->
     </div>
-
+    <!-- Fin Section Contact-->
 </div>
 
-<div class="footer">
-    <p></p>
-</div>
+<footer></footer>
 
 <!-- Lien vers le fichier JavaScript -->
 <script src="script.js"></script>
