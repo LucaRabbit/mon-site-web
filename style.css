@@ -625,14 +625,6 @@ textarea {
     background-color: var(--color-secondary);
 }
 
-/* === FOOTER === */
-footer {
-    color: var(--color-accent);
-    text-align: center;
-    padding: 20px;
-    background-color: var(--color-primary);
-}
-
 /* === RESPONSIVE DESIGN === */
 /* Desktop */
 @media (min-width: 600px) {
