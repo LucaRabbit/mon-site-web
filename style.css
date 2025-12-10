@@ -50,25 +50,28 @@ body {
 
 /* Mobile */
 @media (max-width: 600px) {
+    body {
+        overflow-x: hidden; /* empêche le scroll horizontal */
+    }
+
     .grid-container {
         width: 100%;
         max-width: 100%;
         padding: 10px;
         margin: 0;
-        overflow-x: hidden;
     }
 }
 
 /* ==== EFFETS === */
 .fade-in {
-    opacity: 0; /* invisible */
-    transform: translateY(20px); /* décalage vers le bas */
+    opacity: 0;
+    transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 /* Affichage */
 .fade-in.in-view {
-    opacity: 1; /* visible */
+    opacity: 1;
     transform: translateY(0);
 }
 
@@ -86,9 +89,9 @@ header, footer {
     color: var(--color-accent);
     box-sizing: border-box;
     background-color: var(--color-dark);
-
 }
- /* Mobile */
+
+/* Mobile */
 @media (max-width: 600px) {
     header, footer {
         background-color: var(--color-dark);
@@ -133,6 +136,13 @@ header, footer {
 
 /* Liste sur mobile */
 @media (max-width: 600px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
     .menu ul {
         display: none;
         flex-direction: column;
@@ -145,6 +155,11 @@ header, footer {
 
     .menu-toggle {
         display: block;
+    }
+
+    .menu ul li a {
+        font-size: 1.4rem;
+        padding: 12px 20px;
     }
 }
 
@@ -171,14 +186,6 @@ header, footer {
 .menu a.active {
     color: black;
     background-color: var(--color-accent);
-}
-
-/* Liens + gros sur mobile) */
-@media (max-width: 600px) {
-    .menu ul li a {
-        font-size: 1.4rem;
-        padding: 12px 20px;
-    }
 }
 
 /* === PRESENTATION === */
@@ -333,9 +340,8 @@ header, footer {
 
     .competence-box {
         width: 90%;
-        height: 90%;
+        height: auto;
     }
-
 }
 
 /* === IFRAME SECTION === */
@@ -343,17 +349,22 @@ header, footer {
     grid-area: iframe;
 }
 
-
 .iframe-section iframe {
     width: 100%;
-    max-width: 560px;
+    max-width: 100%; /* Correction mobile */
     height: auto;
     border: none;
     border-radius: 5px;
 }
 
-/* === EVENEMENTS === */
+/* Mobile */
+@media (max-width: 600px) {
+    .iframe-section iframe {
+        width: 100%;
+    }
+}
 
+/* === EVENEMENTS === */
 .intro {
     grid-column: 1 / 3;
     text-align: center;
@@ -420,13 +431,11 @@ header, footer {
 /* Mobile */
 @media (max-width: 600px) {
     .events-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* une seule colonne */
     }
 }
 
-
 /* === POP UP === */
-/* Pour empecher la page de scroll quand popup est ouvert */
 body.no-scroll {
     overflow: hidden;
 }
@@ -450,7 +459,7 @@ body.no-scroll {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    max-width: 80%;
+    max-width: 90%; /* Correction mobile */
     width: 90%;
     max-height: 95vh;
     overflow-y: auto;
@@ -530,8 +539,12 @@ body.no-scroll {
         grid-column: 1;
     }
 
+    .popup-contenu {
+        width: 95%;
+        max-width: 95%;
+        padding: 15px;
+    }
 }
-
 
 /* === CONTACT === */
 .contact {
@@ -650,54 +663,19 @@ textarea {
     background-color: var(--color-secondary);
 }
 
-/* === RESPONSIVE DESIGN === */
-/* Desktop */
-@media (min-width: 600px) {
-    
-    .menu-toggle {
-        display: none;
-    }
-
-    .menu ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .menu ul.show {
-        display: flex;
-    }
-
-    .menu li {
-        flex: 0 1 auto;
-        width: auto;
-    }
-
-    .menu a {
-        padding: 12px;
-        font-size: 1em;
-    }
-}
-
-/* Tablette, mobile */
+/* Mobile */
 @media (max-width: 600px) {
-    /* Menu hamburger */
-    .menu {
-        display: flex;
+    .contact-links {
         flex-direction: column;
         align-items: center;
-        background-color: var(--color-dark);
     }
 
-    .grid-container {
-        min-height: 100vh;
-        background-color: var(--color-bg);
+    .contact-links a {
+        width: 90%;
     }
 
-    body {
-        background-color: var(--color-bg);
+    .contact-form input[type="submit"],
+    .contact-form input[type="reset"] {
+        width: 100%;
     }
 }
